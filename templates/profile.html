@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #121212; /* Preto mais claro */
+        color: #fdfdfd; /* Branco */
+    }
+    header {
+        padding: 20px 0;
+        background-color: #1E1E1E; /* Preto */
+        color: #fff;
+    }
+    nav {
+        display: flex;
+    }
+    nav a {
+        margin: 0 15px;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #1E90FF; /* Azul dodger */
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    nav a:hover {
+        background-color: #4682B4; /* Azul aço */
+    }
+    .profile-content {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #1C1C1C; /* Preto quase total */
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    .profile-content img {
+        max-width: 300px;
+        border-radius: 50%;
+        border: none;
+    }
+    .profile-content h1 {
+        font-size: 2.5em;
+        color: #1E90FF; /* Azul dodger */
+    }
+    .profile-content p {
+        font-size: 1.2em;
+        line-height: 1.6;
+        color: #fdfdfd; /* Branco */
+    }
+</style>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <!--<ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('detection') }}">Detection</a></li>
+            </ul>-->
+            <a href="/">Home</a>
+            <a href="/detection">Detection</a>
+        </nav>
+    </header>
+   <!-- <h1>Perfil do Aluno</h1>
+    <p>Nome: Cariza</p>
+    <img src="{{ url_for('static', filename='images/cariza.jpg') }}" alt="Cariza">-->
+
+    <div class="profile-content">
+        <h1>Student Profile</h1>
+        <img src="{{ url_for('static', filename='images/ProfilePicturePhoto.png') }}" alt="Cariza">
+        <p>Hi, I'm Cariza.</p>
+        <p>Final Year Student of Computer Engineering at Unimindelo.</p>
+        <p>I am currently completing a final seminar project that involves creating an image classification system using Transfer Learning.</p>
+    </div>
+</body>
+</html>

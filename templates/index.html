@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Description</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; 
+            color: #fdfdfd; 
+        }
+        header {
+            padding: 20px 0;
+            background-color: #1E1E1E; 
+            color: #fff;
+            height: 100px;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+            padding: 0 20px; 
+        }
+        nav img {
+            border: none;
+            width: 100px;
+            height: auto;
+        }
+        nav a {
+            margin: 0 15px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #1E90FF; 
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #4682B4; 
+        }
+        .content {
+            display: flex;
+            flex-direction: row; 
+            padding: 20px;
+            justify-content: space-between;
+            background-color: #1C1C1C; 
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .text-content {
+            width: 50%;
+            padding-right: 20px;
+        }
+        .text-content h1, .text-content h2, .text-content p, .text-content ul {
+            margin: 10px 0;
+        }
+        .text-content h1 {
+            font-size: 2.5em;
+            color: #1E90FF; 
+        }
+        .text-content h2 {
+            font-size: 2em;
+            color: #87CEFA; 
+        }
+        .text-content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #fdfdfd; 
+        }
+        .image-content {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-content img {
+            max-width: 100%;
+            border-radius: 10px;
+            border: none;
+        }
+        .center-content {
+            text-align: center;
+            padding: 20px;
+            background-color: #1C1C1C; 
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .center-content h2 {
+            font-size: 2em;
+            color: #1E90FF; 
+        }
+        .center-content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #fdfdfd; 
+        }
+        .detection {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #1E90FF;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .detection:hover {
+            background-color: #4682B4; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="{{ url_for('static', filename='images/uniblack.png') }}" alt="university">
+            <a href="/profile">Profile</a>
+        </nav>
+    </header>
+    <div class="content">
+        <div class="text-content">
+            <h1>Project Description</h1>
+            <p>
+                This project aims to create an image classification system capable of identifying me among other people, using Transfer Learning techniques. Developed as part of an Artificial Intelligence seminar, the project involves several steps, from collecting and preparing the data to implementing a web interface for real-time detection.
+            </p>
+            <a class="detection" href="/detection">Start Detection</a>
+        </div>
+        <div class="image-content">
+            <img src="{{ url_for('static', filename='images/home.gif') }}" alt="Face Detection GIF">
+        </div>
+    </div>
+    <div class="center-content">
+        <h2>How to Use</h2>
+        <p>
+            To use the system, simply access the project's Detection page, where detailed instructions are provided on how to operate the web interface and perform real-time detection.
+        </p>
+    </div>
+    <div class="center-content">
+        <p>
+            This project represents a significant effort to apply advanced machine learning techniques in a practical and accessible context, demonstrating the potential of AI to solve real-world problems efficiently and effectively.
+        </p>
+    </div>
+</body>
+</html>

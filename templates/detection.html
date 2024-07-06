@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Preto mais claro */
+            color: #fdfdfd; /* Branco */
+        }
+        header {
+            padding: 20px 0;
+            background-color: #1E1E1E; /* Preto */
+            color: #fff;
+        }
+        nav {
+            display: flex;
+        }
+        nav a {
+            margin: 0 15px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #1E90FF; /* Azul dodger */
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #4682B4; /* Azul aço */
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #1C1C1C; /* Preto quase total */
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content h1 {
+            font-size: 2.5em;
+            color: #1E90FF; /* Azul dodger */
+        }
+        .content img {
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .detect-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #1E90FF; /* Azul dodger */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .detect-button:hover {
+            background-color: #4682B4; /* Azul aço */
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <!--<ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('profile') }}">Profile</a></li>
+            </ul> -->
+            <a href="/">Home</a>
+            <a href="/profile">Profile</a>
+        </nav>
+    </header>
+    <!--<h1>Detecção em Tempo Real</h1>
+    <img src="{{ url_for('video_feed') }}" width="640" height="480">-->
+    
+    <div class="content">
+        <h1>Real-Time Detection</h1>
+        <img id="videoFeed" src="{{ url_for('static', filename='images/imageFD.gif') }}" width="640" height="480" alt="Real-Time Video Feed">
+        <button class="detect-button" onclick="toggleDetection()">Detect</button>
+        <p>Just click the detect button and the system will identify if you are cariza or not.</p>
+    </div>
+
+    <script>
+        let detectionRunning = false;
+
+        function toggleDetection() {
+            const button = document.querySelector('.detect-button');
+
+            if (!detectionRunning) {
+                // Start detection
+                alert("Starting real-time detection!");
+                // Replace with actual detection start logic
+                document.getElementById("videoFeed").src = "{{ url_for('video_feed') }}";
+                button.textContent = "Stop Detection";
+            } else {
+                // Stop detection
+                alert("Stopping real-time detection!");
+                // Replace with actual detection stop logic
+                document.getElementById("videoFeed").src = "{{ url_for('static', filename='images/imageFD.gif') }}";
+                button.textContent = "Detect";
+                
+            }
+
+            detectionRunning = !detectionRunning;
+        }
+    </script>
+</body>
+</html>
